@@ -4,8 +4,8 @@ from src.config import settings
 from src.users.models import User
 
 # MONGO_CONFIG_URL=mongodb://root:mongoroot@mongo:27017/
-MONGO_CONFIG_URL = f"mongodb://{settings.mongo_username}:{settings.mongo_password}@{settings.mongo_host}:{settings.mongo_port}/"
-
+# MONGO_CONFIG_URL = f"mongodb://{settings.mongo_username}:{settings.mongo_password}@{settings.mongo_host}:{settings.mongo_port}/"
+MONGO_CONFIG_URL=settings.mongo_config_url
 
 async def init_db():
     client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_CONFIG_URL)
